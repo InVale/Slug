@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a0fd483d6e493f47962b00bfafe7137, type: 3}
+  m_Name: AK
+  m_EditorClassIdentifier: 
+  ItemName: AK
+  Image: {fileID: 21300000, guid: dccc05b8d01dde54f88f9910329187c2, type: 3}
+  UIColor: {r: 0.6431373, g: 0.2627451, b: 0.2627451, a: 1}
+  Length: 4
+  Height: 2
+  Flipped: 0
+  FireMode: 4
+  Firerate: 400
+  Recoil: 120
+  SightDistance: 5
+  Ammo: 1
+  Magazine: {fileID: 11400000, guid: 965062872c077bd4ea8bb45c7abfb03b, type: 2}
+  ReloadDuration: 2.2

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f0a44f3e920d04ba71a84d8860a761, type: 3}
+  m_Name: AK_Mag
+  m_EditorClassIdentifier: 
+  ItemName: AK Mag.
+  Image: {fileID: 21300000, guid: 7189ab4d0ba87b047a1b1c00c917a1ea, type: 3}
+  UIColor: {r: 0, g: 0.38679248, b: 0.6117647, a: 1}
+  Length: 1
+  Height: 2
+  Flipped: 0
+  MagazineCapacity: 30
+  Ammo: 1
+  AmmoCount: 30
