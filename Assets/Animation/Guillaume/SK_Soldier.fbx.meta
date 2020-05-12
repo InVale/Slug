@@ -90,7 +90,252 @@ ModelImporter:
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton: []
+    skeleton:
+    - name: SK_Soldier(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_third_person_character
+      parentName: SK_Soldier(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_goggles
+      parentName: solider_third_person_character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_headset
+      parentName: solider_third_person_character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_helmet
+      parentName: solider_third_person_character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_backpack
+      parentName: solider_third_person_character
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_root
+      parentName: SK_Soldier(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 1.110223e-16, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: solider_weapon
+      parentName: soldier_root
+      position: {x: 0.000000004560043, y: 1.1752473, z: 0.2789902}
+      rotation: {x: 0.0000003672014, y: -0.7071068, z: 0.0000003672014, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_hips
+      parentName: soldier_root
+      position: {x: 7.223207e-11, y: 0.8989649, z: -0.057114255}
+      rotation: {x: 0.094769746, y: -0.00000023725127, z: -0.000000023231317, w: 0.99549925}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_spine
+      parentName: soldier_hips
+      position: {x: 1.0574453e-14, y: 0.15599087, z: 0.000000035462044}
+      rotation: {x: -0.058529794, y: 0.0000001190364, z: 0.000000020648669, w: 0.9982857}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_chest
+      parentName: soldier_spine
+      position: {x: -5.4062932e-15, y: 0.13545154, z: -0.00000002492799}
+      rotation: {x: -0.06309791, y: -8.875339e-15, z: 0.000000015043714, w: 0.99800736}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_neck
+      parentName: soldier_chest
+      position: {x: -1.2770526e-10, y: 0.2277549, z: -0.00053564686}
+      rotation: {x: 0.1933059, y: -0.000000045034547, z: -0.000000065829774, w: 0.9811385}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_head
+      parentName: soldier_neck
+      position: {x: -2.0613153e-14, y: 0.0863014, z: 0.000000027320649}
+      rotation: {x: -0.0989736, y: 0.00000016425228, z: 0.000000028349062, w: 0.99509007}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_shoulder_L
+      parentName: soldier_chest
+      position: {x: -0.037257295, y: 0.15521938, z: 0.079611875}
+      rotation: {x: -0.51142603, y: 0.42224914, z: 0.3669938, w: 0.6522765}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_upper_arm_L
+      parentName: soldier_shoulder_L
+      position: {x: -0.008275635, y: 0.14550035, z: -0.033711422}
+      rotation: {x: 0.07095661, y: -0.6787444, z: 0.19805042, w: 0.70359594}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_lower_arm_L
+      parentName: soldier_upper_arm_L
+      position: {x: 0.00000005503739, y: 0.29073724, z: -0.00000006551319}
+      rotation: {x: 0.04034771, y: -0.0056792493, z: 0.00015923752, w: 0.9991696}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_hand_L
+      parentName: soldier_lower_arm_L
+      position: {x: -0.00000007492333, y: 0.27616438, z: -0.000000053444218}
+      rotation: {x: -0.022659406, y: 0.001483869, z: -0.045331374, w: 0.9987139}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_01_L
+      parentName: soldier_hand_L
+      position: {x: -0.002785823, y: 0.11399375, z: 0.035113163}
+      rotation: {x: -0.0038635305, y: 0.019854784, z: 0.045842435, w: 0.9987439}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_02_L
+      parentName: soldier_f_index_01_L
+      position: {x: -0.00000018249007, y: 0.02881111, z: -0.000000008441226}
+      rotation: {x: -0.00008961269, y: -0.013896438, z: 0.004428169, w: 0.99989367}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_03_L
+      parentName: soldier_f_index_02_L
+      position: {x: 0.00000013529835, y: 0.02874985, z: -0.000000006858201}
+      rotation: {x: -0.0001471132, y: 0.0014221024, z: 0.01887383, w: 0.9998209}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_01_L
+      parentName: soldier_hand_L
+      position: {x: -0.00016645751, y: 0.042813715, z: 0.033891708}
+      rotation: {x: 0.4084619, y: 0.024810994, z: 0.029997973, w: 0.91194487}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_02_L
+      parentName: soldier_thumb_01_L
+      position: {x: -0.000000097398576, y: 0.031322148, z: 0.000000026777323}
+      rotation: {x: 0.00018914965, y: -0.0057653845, z: 0.01942153, w: 0.9997947}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_03_L
+      parentName: soldier_thumb_02_L
+      position: {x: -0.00000006307071, y: 0.031255104, z: 0.0000000687708}
+      rotation: {x: -0.000011180742, y: 0.0035624702, z: 0.019474307, w: 0.999804}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_01_L
+      parentName: soldier_hand_L
+      position: {x: -0.0023270743, y: 0.11374833, z: -0.01164743}
+      rotation: {x: -0.0035386665, y: 0.01235342, z: 0.04882088, w: 0.99872494}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_02_L
+      parentName: soldier_f_middle_01_L
+      position: {x: 0.00000006627476, y: 0.030101499, z: -0.000000006270836}
+      rotation: {x: -0.00015458881, y: -0.004866038, z: 0.010840268, w: 0.9999294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_03_L
+      parentName: soldier_f_middle_02_L
+      position: {x: -0.00000011569043, y: 0.030625485, z: -0.000000007073709}
+      rotation: {x: -0.0003876205, y: 0.004738245, z: 0.027423013, w: 0.9996126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_shoulder_R
+      parentName: soldier_chest
+      position: {x: 0.037257332, y: 0.15521938, z: 0.079611845}
+      rotation: {x: -0.511426, y: -0.42224914, z: -0.36699387, w: 0.6522766}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_upper_arm_R
+      parentName: soldier_shoulder_R
+      position: {x: 0.008275642, y: 0.14549984, z: -0.03371136}
+      rotation: {x: 0.07095176, y: 0.6787458, z: -0.19804586, w: 0.70359635}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_lower_arm_R
+      parentName: soldier_upper_arm_R
+      position: {x: 0.00000055692806, y: 0.29073706, z: 0.000000067921405}
+      rotation: {x: 0.04035366, y: 0.0056792777, z: -0.00015945727, w: 0.99916935}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_hand_R
+      parentName: soldier_lower_arm_R
+      position: {x: 0.00000028608832, y: 0.27616414, z: 0.000000064306306}
+      rotation: {x: -0.02266949, y: -0.0014838829, z: 0.045330204, w: 0.99871373}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_01_R
+      parentName: soldier_hand_R
+      position: {x: 0.0027857642, y: 0.11399366, z: 0.03511319}
+      rotation: {x: -0.0038634671, y: -0.019854788, z: -0.045842562, w: 0.9987439}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_02_R
+      parentName: soldier_f_index_01_R
+      position: {x: 0.00000011969256, y: 0.028811034, z: 0.000000003801995}
+      rotation: {x: -0.00008966935, y: 0.013896443, z: -0.004428168, w: 0.99989367}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_index_03_R
+      parentName: soldier_f_index_02_R
+      position: {x: 0.00000010692466, y: 0.028749852, z: 0.0000000048215143}
+      rotation: {x: -0.00014711244, y: -0.0014221049, z: -0.018873746, w: 0.9998209}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_01_R
+      parentName: soldier_hand_R
+      position: {x: 0.00016623264, y: 0.042813648, z: 0.0338917}
+      rotation: {x: 0.40846416, y: -0.024811065, z: -0.02999775, w: 0.91194385}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_02_R
+      parentName: soldier_thumb_01_R
+      position: {x: 0.00000007294979, y: 0.03132212, z: 0.000000010342222}
+      rotation: {x: 0.00018992137, y: 0.005765311, z: -0.019421443, w: 0.9997948}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_thumb_03_R
+      parentName: soldier_thumb_02_R
+      position: {x: 0.00000004772472, y: 0.031255033, z: -0.00000003154542}
+      rotation: {x: -0.000011218621, y: -0.003562432, z: -0.01947443, w: 0.999804}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_01_R
+      parentName: soldier_hand_R
+      position: {x: 0.0023269923, y: 0.113748245, z: -0.011647361}
+      rotation: {x: -0.0035386495, y: -0.012353417, z: -0.048820924, w: 0.9987249}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_02_R
+      parentName: soldier_f_middle_01_R
+      position: {x: 0.000000026020237, y: 0.030101422, z: 0.00000000368924}
+      rotation: {x: -0.00015459416, y: 0.004866041, z: -0.010840268, w: 0.9999294}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_f_middle_03_R
+      parentName: soldier_f_middle_02_R
+      position: {x: 0.00000020845894, y: 0.030625412, z: 0.000000005025365}
+      rotation: {x: -0.00038761695, y: -0.004738245, z: -0.027423013, w: 0.9996126}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_upper_leg_L
+      parentName: soldier_hips
+      position: {x: -0.0910567, y: -0.0592345, z: 0.057936966}
+      rotation: {x: 0.99032295, y: -0.0112279365, z: 0.0036184946, w: 0.13827977}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_lower_leg_L
+      parentName: soldier_upper_leg_L
+      position: {x: -0.0000000036377266, y: 0.36171517, z: -0.00000015448836}
+      rotation: {x: 0.09980098, y: -0.002922437, z: -0.009857563, w: 0.9949543}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_foot_L
+      parentName: soldier_lower_leg_L
+      position: {x: 0.0000000027445233, y: 0.33706504, z: 0.000000104343}
+      rotation: {x: -0.50483394, y: 0.0003880074, z: -0.0014700862, w: 0.86321515}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_toe_L
+      parentName: soldier_foot_L
+      position: {x: 4.91497e-10, y: 0.15783125, z: -0.00000022901747}
+      rotation: {x: -0.00000059537246, y: 0.9035248, z: -0.4285359, w: -0.0000000123711805}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_heel_L
+      parentName: soldier_foot_L
+      position: {x: 0.0000000045290407, y: -0.0000000029730545, z: 0.00000001012921}
+      rotation: {x: -0.0000024719716, y: 0.75290203, z: 0.6581326, w: -0.0000039294164}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_upper_leg_R
+      parentName: soldier_hips
+      position: {x: 0.091056734, y: -0.0592345, z: 0.057936873}
+      rotation: {x: 0.9903228, y: 0.011227765, z: -0.0036188972, w: 0.13828069}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_lower_leg_R
+      parentName: soldier_upper_leg_R
+      position: {x: 0.000000010615782, y: 0.36171505, z: -0.0000001477798}
+      rotation: {x: 0.09980256, y: 0.002922436, z: 0.00985765, w: 0.99495417}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_foot_R
+      parentName: soldier_lower_leg_R
+      position: {x: 0.000000006669457, y: 0.33706504, z: 0.00000008054936}
+      rotation: {x: -0.5048348, y: -0.00038788345, z: 0.0014701042, w: 0.8632147}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_heel_R
+      parentName: soldier_foot_R
+      position: {x: 0.0000000040609147, y: -0.0000000013254479, z: 0.000000027195918}
+      rotation: {x: 0.000002472441, y: 0.75290203, z: 0.6581326, w: 0.0000039298266}
+      scale: {x: 1, y: 1, z: 1}
+    - name: soldier_toe_R
+      parentName: soldier_foot_R
+      position: {x: 0.000000002126895, y: 0.15783125, z: -0.00000021435817}
+      rotation: {x: 0.0000005953724, y: 0.9035248, z: -0.42853576, w: 0.00000001237126}
+      scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
@@ -105,7 +350,7 @@ ModelImporter:
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
   avatarSetup: 1
   additionalBone: 0
