@@ -27,14 +27,22 @@ public class WorldInventory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        _outline.enabled = true;
-        other.GetComponentInParent<Character>().CurrentLoot = ObjectInventory;
+        Character character = other.GetComponentInParent<Character>();
+        if (character)
+        {
+            _outline.enabled = true;
+            character.CurrentLoot = ObjectInventory;
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        _outline.enabled = false;
-        if (other.GetComponentInParent<Character>().CurrentLoot == ObjectInventory)
-            other.GetComponentInParent<Character>().CurrentLoot = null;
+        Character character = other.GetComponentInParent<Character>();
+        if (character)
+        {
+            _outline.enabled = false;
+            if (character.CurrentLoot == ObjectInventory)
+                character.CurrentLoot = null;
+        }
     }
 }

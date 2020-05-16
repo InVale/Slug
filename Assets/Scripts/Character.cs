@@ -17,6 +17,7 @@ public class Character : MonoBehaviour
     public float Threshold;
     public float Gravity;
     public float GroundPadding;
+    public LayerMask GroundLayer;
 
     [Title("Aiming")]
     public float AimingAngleSpeed;
@@ -44,6 +45,7 @@ public class Character : MonoBehaviour
     [NonSerialized] public Inventory CurrentLoot;
 
     Rigidbody _rgbd;
+    float _lastX;
 
     private void Awake()
     {
@@ -70,11 +72,11 @@ public class Character : MonoBehaviour
         CharacterInput input = AcquireInputs();
 
         Aiming(input);
-        Movement(input);
+        _rgbd.velocity = Movement(input);
 
         CharacterAnimator.SetFloat("Movement", Velocity.x * Side);
         CharacterAnimator.SetBool("Aim", IsAiming);
-        CharacterAnimator.SetFloat("Aim Angle", AimAngle);
+        //CharacterAnimator.SetFloat("Aim Angle", AimAngle);
         CharacterAnimator.SetInteger("Side", Mathf.RoundToInt(Side));
     }
 
@@ -95,17 +97,15 @@ public class Character : MonoBehaviour
         return input;
     }
 
-    void Movement (CharacterInput input)
+    Vector3 Movement (CharacterInput input)
     {
-        Velocity = _rgbd.velocity;
-
         float horizontalInput = 0;
-        if (Mathf.Abs(input.MovementInput.x) > 0.4f)
+        if (Mathf.Abs(input.MovementInput.x) > 0.3f)
             horizontalInput = Mathf.Sign(input.MovementInput.x);
         if (horizontalInput != 0f && !IsAiming)
             Side = Mathf.Sign(horizontalInput);
 
-        Velocity /= 1 + Drag * Time.deltaTime;
+        Velocity.x /= 1 + Drag * Time.deltaTime;
         float acceleration = (!IsAiming) ? ((Input.GetButton("Cancel")) ? RunAcceleration : Acceleration) : ((Side == Mathf.Sign(horizontalInput)) ? AimForwardAcceleration : AimBackwardAcceleration);
         if (horizontalInput != 0)
             Velocity.x += Mathf.Sign(horizontalInput) * acceleration * Time.deltaTime;
@@ -114,13 +114,27 @@ public class Character : MonoBehaviour
 
         Velocity.y -= Gravity * Time.deltaTime;
         RaycastHit hit;
-        if (Physics.Raycast(transform.position, Vector3.down, out hit, GroundPadding))
+        Debug.DrawRay(transform.position + new Vector3(Side * 0.2f, 0.1f, 0), Vector3.down * (GroundPadding + 0.1f), Color.red, Time.deltaTime);
+        if (Physics.Raycast(transform.position + new Vector3(Side * 0.2f, 0.1f, 0), Vector3.down, out hit, GroundPadding + 0.1f, GroundLayer))
         {
             Velocity.y = 0;
-            _rgbd.MovePosition(hit.point);
+            float angle = Vector3.Angle(hit.normal, Vector3.up);
+            if (angle > 0.01f || angle < -0.01f)
+                return new Vector3(Velocity.x, -Vector3.Dot(hit.normal, Velocity) / hit.normal.y, 0);
+        }
+        Debug.DrawRay(transform.position + new Vector3(0, 0.02f, 0), Vector3.down * GroundPadding, Color.red, Time.deltaTime);
+        if (Physics.Raycast(transform.position + new Vector3(0, 0.02f, 0), Vector3.down, out hit, GroundPadding, GroundLayer))
+        {
+            Velocity.y = 0;
+
+            float angle = Vector3.Angle(hit.normal, Vector3.up);
+            if (angle < 0.01f || angle > -0.01f)
+                _rgbd.MovePosition(hit.point);
+            else if (Vector3.Dot(hit.normal, Velocity) > 0)
+                return new Vector3(Velocity.x, -Vector3.Dot(hit.normal, Velocity) / hit.normal.y, 0);
         }
 
-        _rgbd.velocity = Velocity;
+        return Velocity;
     }
 
     void Aiming(CharacterInput input)

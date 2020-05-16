@@ -1,4 +1,5 @@
 ﻿using Sirenix.OdinInspector;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,6 +67,8 @@ public class Weapon : MonoBehaviour
         CheckFire();
         ComputeRecoil(Time.time - _lastShotTimestamp);
         Reload();
+
+        Character.Instance.CharacterAnimator.SetFloat("Aim Angle", Character.Instance.AimAngle + _currentRecoilAngle);
     }
 
     void DebugMounts ()
@@ -123,7 +126,7 @@ public class Weapon : MonoBehaviour
             StopCoroutine(_muzzleFlash);
         _muzzleFlash = StartCoroutine(MuzzleFlashLight());
         muzzleParticles.Emit(1);
-        sparkParticles.Emit(Random.Range(1, 7));
+        sparkParticles.Emit(UnityEngine.Random.Range(1, 7));
 
         GameObject bullet = Instantiate(BulletPrefab, BulletPivot.transform.position, BulletPivot.transform.rotation);
         Vector3 vel = bullet.transform.forward * 400f;
