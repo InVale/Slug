@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Laser : MonoBehaviour
 {
+    public LayerMask BulletLayer;
+
     LineRenderer _line;
     
     void Start()
@@ -14,7 +16,7 @@ public class Laser : MonoBehaviour
     void Update()
     {
         RaycastHit hit;
-        Physics.Raycast(transform.position, transform.right, out hit);
-        _line.SetPosition(1, Vector3.right * hit.distance / transform.lossyScale.x);
+        Physics.Raycast(transform.position, transform.forward, out hit, Mathf.Infinity, BulletLayer);
+        _line.SetPosition(1, Vector3.forward * hit.distance / transform.lossyScale.x);
     }
 }
