@@ -78,6 +78,7 @@ public class Character : MonoBehaviour
         CharacterAnimator.SetBool("Aim", IsAiming);
         //CharacterAnimator.SetFloat("Aim Angle", AimAngle);
         CharacterAnimator.SetInteger("Side", Mathf.RoundToInt(Side));
+        transform.root.eulerAngles = new Vector3(0, (Side > 0) ? 180 : 0, 0);
     }
 
     struct CharacterInput
