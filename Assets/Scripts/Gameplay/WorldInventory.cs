@@ -10,15 +10,15 @@ public class WorldInventory : MonoBehaviour
     public Item[] Items;
 
     public Inventory ObjectInventory;
+    public OutlineRegister ObjectToOutline;
 
     Renderer _renderer;
-    OutlineRegister _outline;
 
     // Start is called before the first frame update
     void Start()
     {
         _renderer = GetComponent<Renderer>();
-        _outline = GetComponent<OutlineRegister>();
+        ObjectToOutline = GetComponent<OutlineRegister>();
 
         ObjectInventory = new Inventory(Length, Height);
         foreach (Item item in Items)
@@ -30,7 +30,7 @@ public class WorldInventory : MonoBehaviour
         Character character = other.GetComponentInParent<Character>();
         if (character)
         {
-            _outline.enabled = true;
+            ObjectToOutline.enabled = true;
             character.CurrentLoot = ObjectInventory;
         }
     }
@@ -40,7 +40,7 @@ public class WorldInventory : MonoBehaviour
         Character character = other.GetComponentInParent<Character>();
         if (character)
         {
-            _outline.enabled = false;
+            ObjectToOutline.enabled = false;
             if (character.CurrentLoot == ObjectInventory)
                 character.CurrentLoot = null;
         }

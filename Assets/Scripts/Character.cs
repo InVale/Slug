@@ -18,6 +18,7 @@ public class Character : MonoBehaviour
     public float Gravity;
     public float GroundPadding;
     public LayerMask GroundLayer;
+    public float SlopSpeedMultiplier;
 
     [Title("Aiming")]
     public float AimingAngleSpeed;
@@ -40,6 +41,7 @@ public class Character : MonoBehaviour
     [Space]
     public Weapon CurrentWeapon;
     public Animator CharacterAnimator;
+    public Transform LeftHand;
 
     [NonSerialized] public Inventory PlayerInventory;
     [NonSerialized] public Inventory CurrentLoot;
@@ -76,9 +78,8 @@ public class Character : MonoBehaviour
 
         CharacterAnimator.SetFloat("Movement", Velocity.x * Side);
         CharacterAnimator.SetBool("Aim", IsAiming);
-        //CharacterAnimator.SetFloat("Aim Angle", AimAngle);
         CharacterAnimator.SetInteger("Side", Mathf.RoundToInt(Side));
-        transform.root.eulerAngles = new Vector3(0, (Side > 0) ? 180 : 0, 0);
+        transform.eulerAngles = new Vector3(0, (Side > 0) ? 180 : 0, 0);
     }
 
     struct CharacterInput
@@ -121,7 +122,7 @@ public class Character : MonoBehaviour
             Velocity.y = 0;
             float angle = Vector3.Angle(hit.normal, Vector3.up);
             if (angle > 0.01f || angle < -0.01f)
-                return new Vector3(Velocity.x, -Vector3.Dot(hit.normal, Velocity) / hit.normal.y, 0);
+                return new Vector3(Velocity.x * SlopSpeedMultiplier, -Vector3.Dot(hit.normal, Velocity * SlopSpeedMultiplier) / hit.normal.y, 0);
         }
         Debug.DrawRay(transform.position + new Vector3(0, 0.02f, 0), Vector3.down * GroundPadding, Color.red, Time.deltaTime);
         if (Physics.Raycast(transform.position + new Vector3(0, 0.02f, 0), Vector3.down, out hit, GroundPadding, GroundLayer))
@@ -132,7 +133,7 @@ public class Character : MonoBehaviour
             if (angle < 0.01f || angle > -0.01f)
                 _rgbd.MovePosition(hit.point);
             else if (Vector3.Dot(hit.normal, Velocity) > 0)
-                return new Vector3(Velocity.x, -Vector3.Dot(hit.normal, Velocity) / hit.normal.y, 0);
+                return new Vector3(Velocity.x * SlopSpeedMultiplier, -Vector3.Dot(hit.normal, Velocity * SlopSpeedMultiplier) / hit.normal.y, 0);
         }
 
         return Velocity;

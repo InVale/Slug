@@ -31,6 +31,7 @@ public class Weapon : MonoBehaviour
     public WeaponItem WeaponAsset;
     public GameObject BulletPrefab;
     [Space]
+    public Transform MagazineTransform;
     public Transform BulletPivot;
     [Space]
     public ParticleSystem muzzleParticles;

@@ -6943,6 +6943,12 @@ Light:
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &240684040 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8077016904741149657, guid: 7184c49342b24db4fbcc131e9d9168ea,
+    type: 3}
+  m_PrefabInstance: {fileID: 561455132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &241626646
 GameObject:
   m_ObjectHideFlags: 0
@@ -16321,6 +16327,7 @@ MonoBehaviour:
     type: 3}
   CurrentWeapon: {fileID: 1902546102}
   CharacterAnimator: {fileID: 1029793593}
+  LeftHand: {fileID: 240684040}
 --- !u!54 &1018924149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -16353,6 +16360,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1019277350 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4855779723070608, guid: 33f6247810b654041bccca4adbd93f45,
+    type: 3}
+  m_PrefabInstance: {fileID: 1072048448}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1021103892
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29929,6 +29942,7 @@ MonoBehaviour:
   WeaponAsset: {fileID: 11400000, guid: c74266f2425f9244a9aff990d46f05d5, type: 2}
   BulletPrefab: {fileID: 1086664671600574, guid: 988bc61d704b13142908ff104277b629,
     type: 3}
+  MagazineTransform: {fileID: 1019277350}
   BulletPivot: {fileID: 639433775}
   muzzleParticles: {fileID: 1084684849}
   sparkParticles: {fileID: 66055152}

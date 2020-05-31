@@ -30,11 +30,15 @@ public class StairsEntry : MonoBehaviour
     [ShowIf(nameof(Debug))] public Material ActivatedMaterial;
     [ShowIf(nameof(Debug))] public Material DeactivatedMaterial;
 
+    const float _stairZ = -0.75f;
+    const float _floorZ = -2f;
+
     void Start ()
     {
         HandleColliders(UpColliders, false);
         HandleColliders(DownColliders, false);
         HandleColliders(LevelColliders, true);
+        Character.Instance.transform.position = new Vector3(Character.Instance.transform.position.x, Character.Instance.transform.position.y, _floorZ);
     }
 
     private void OnTriggerStay(Collider other)
@@ -52,18 +56,21 @@ public class StairsEntry : MonoBehaviour
                         HandleColliders(UpColliders, false);
                         HandleColliders(DownColliders, false);
                         HandleColliders(LevelColliders, true);
+                        Character.Instance.transform.position = new Vector3(Character.Instance.transform.position.x, Character.Instance.transform.position.y, _floorZ);
                     }
                     else if (Mathf.Sign(input) > 0)
                     {
-                        HandleColliders(UpColliders, true);
                         HandleColliders(DownColliders, false);
                         HandleColliders(LevelColliders, false);
+                        HandleColliders(UpColliders, true);
+                        Character.Instance.transform.position = new Vector3(Character.Instance.transform.position.x, Character.Instance.transform.position.y, _stairZ);
                     }
                     else if (Mathf.Sign(input) < 0)
                     {
                         HandleColliders(UpColliders, false);
-                        HandleColliders(DownColliders, true);
                         HandleColliders(LevelColliders, false);
+                        HandleColliders(DownColliders, true);
+                        Character.Instance.transform.position = new Vector3(Character.Instance.transform.position.x, Character.Instance.transform.position.y, _stairZ);
                     }
                 }
                 else
